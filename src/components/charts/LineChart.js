@@ -1,35 +1,57 @@
-import React from "react";
-import Chart from "chart.js/auto";
-import './LineChart.css'
-import { Line } from "react-chartjs-2";
+import React from 'react';
+import Chart from "react-apexcharts";
 
-
-const labels = ["January", "February", "March", "April", "May", "June"];
-
-const data = {
-  labels: labels,
-  datasets: [
+const Btc = () => {
+  
+  const series = [ //data on the y-axis
     {
-      label: "My First dataset",
-      backgroundColor: "rgb(255, 99, 132)",
-      borderColor: "rgb(255, 99, 132)",
-      data: [0, 10, 5, 2, 20, 30, 45],
-    },
-  ],
-  borderWidth: 1,
-};
+      name: "Btc Price",
+      data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
+},
+  ];
+  const options = { //data on the x-axis
+    chart: { id: 'bar-chart'},
+    xaxis: {
+      categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+      },
+     dataLabels: {
+                enabled: false
+      },
+    
+      title: {
+                text: 'Fundamental Analysis of Stocks',
+                align: 'left'
+          },
+      subtitle: {
+                text: 'Price Movements',
+                align: 'left'
+        }, 
+      colors:['#9C27B0'],
+      fill:  {colors: ['#F44336'] },
+      grid: {
+  row: {
+    colors: ['#fff']
+  },
+  column: {
+    colors: ['#fff']
+  }
+},
+  chart: {
+          background: '#fff',
+      },
 
- const options = {
-      maintainAspectRatio: false	// Don't maintain w/h ratio
-    }
-    
-    
-const LineChart = () => {
+  };
+
   return (
-    <div className="canvas-container">
-      <Line  data={data} options={options}/>
+    <div>
+      <Chart
+        options={options}
+        series={series}
+        type="line"
+        width="600px"
+      />
     </div>
-  );
-};
+  )
+}
 
-export default LineChart;
+export default Btc;

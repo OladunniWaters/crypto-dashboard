@@ -1,7 +1,7 @@
 import React from 'react';
 import Chart from "react-apexcharts";
 
-const BarChart = () => {
+const AreaChart = () => {
   
   const series = [ //data on the y-axis
     {
@@ -48,11 +48,11 @@ const BarChart = () => {
       <Chart
         options={options}
         series={series}
-        type="bar"
+        type="area"
         width="600px"
       />
     </div>
   )
 }
 
-export default BarChart;
+export default AreaChart;

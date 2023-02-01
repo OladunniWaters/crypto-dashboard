@@ -25,8 +25,8 @@ import {
 
 import { Routes, Route, Link, BrowserRouter } from "react-router-dom";
 
-import Starred from './Starred';
-import Inbox from './components/dashPage/DashPage'
+import Starred from './components/charts/BarChart';
+import Inbox from './components/dashboard/Dashboard'
 
 
 /****************** start *****************/
