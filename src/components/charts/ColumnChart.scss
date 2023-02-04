@@ -1,0 +1,12 @@
+.column{
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+width: 400px;
+margin-top: 0px;
+}
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+width: 350px;
+margin-top: 0px;
+}
+width: 400px;
+margin-top: 30px;
+}

@@ -10,7 +10,7 @@ const AreaChart = () => {
 },
   ];
   const options = { //data on the x-axis
-    chart: { id: 'bar-chart'},
+    chart: { id: 'bar-chart', background: '#fff',},
     xaxis: {
       categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
       },
@@ -36,9 +36,7 @@ const AreaChart = () => {
               colors: ['#fff']
             }
           },
-         chart: {
-          background: '#fff',
-      },
+
  
   
   };
@@ -49,7 +47,7 @@ const AreaChart = () => {
         options={options}
         series={series}
         type="area"
-        width="600px"
+        width="300px"
       />
     </div>
   )
