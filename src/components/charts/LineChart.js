@@ -48,7 +48,7 @@ const Btc = () => {
         options={options}
         series={series}
         type="line"
-        width="600px"
+        width="300px"
       />
     </div>
   )

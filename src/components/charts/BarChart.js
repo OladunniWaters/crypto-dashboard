@@ -10,7 +10,7 @@ const BarChart = () => {
 },
   ];
   const options = { //data on the x-axis
-    chart: { id: 'bar-chart'},
+    chart: { id: 'bar-chart',  background: '#fff'},
     xaxis: {
       categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
       },
@@ -36,9 +36,6 @@ const BarChart = () => {
               colors: ['#fff']
             }
           },
-         chart: {
-          background: '#fff',
-      },
  
   
   };
@@ -49,7 +46,8 @@ const BarChart = () => {
         options={options}
         series={series}
         type="bar"
-        width="600px"
+        width="750px"
+        height="400px"
       />
     </div>
   )

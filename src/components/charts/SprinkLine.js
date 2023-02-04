@@ -12,6 +12,8 @@ const SprinkLine = () => {
       chart: {
                 type: 'area',
                 height: 160,
+                background: '#fff',
+                padding: 20,
                 sparkline: {
                   enabled: true
                 },
@@ -48,12 +50,12 @@ const SprinkLine = () => {
   };
 
   return (
-    <div>
+    <div style={{marginRight: '20px'}}>
       <Chart
         options={options}
         series={series}
         type="area"
-        width="600px"
+        width="300px"
       />
     </div>
   )

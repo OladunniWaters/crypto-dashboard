@@ -1,5 +1,6 @@
 import React from 'react';
 import Chart from "react-apexcharts";
+import './ColumnChart.scss'
 
 const ColumnChart = () => {
   
@@ -16,7 +17,7 @@ const ColumnChart = () => {
             },
   ];
   const options = { //data on the x-axis
-    chart: {id: 'bar-chart', type: 'bar', height: 350},
+    chart: {id: 'bar-chart', type: 'bar', height: 350 ,background: '#fff'},
     xaxis: {
       categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
       },
@@ -30,15 +31,7 @@ const ColumnChart = () => {
      dataLabels: {
                 enabled: false
       },
-    
-      title: {
-                text: 'Fundamental Analysis of Stocks',
-                align: 'left'
-          },
-      subtitle: {
-                text: 'Price Movements',
-                align: 'left'
-        }, 
+ 
       stroke: {
                 show: true,
                 width: 2,
@@ -54,20 +47,18 @@ const ColumnChart = () => {
               colors: ['#fff']
             }
           },
-         chart: {
-          background: '#fff',
-      },
+
  
   
   };
 
   return (
-    <div>
+    <div className="column">
       <Chart
         options={options}
         series={series}
         type="bar"
-        width="600px"
+        width="100%"
       />
     </div>
   )

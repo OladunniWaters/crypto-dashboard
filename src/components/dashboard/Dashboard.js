@@ -1,24 +1,42 @@
 //import LineChart from '../charts/LineChart';
-import BarChart from '../charts/BarChart';
+//import BarChart from '../charts/BarChart';
 import ColumnChart from '../charts/ColumnChart';
-import AreaChart from '../charts/AreaChart';
-//import PieChart from '../charts/PieChart';
+//import AreaChart from '../charts/AreaChart';
+import PieChart from '../charts/PieChart';
 import SprinkLine from '../charts/SprinkLine';
+import CandleStickChart from '../charts/CandleStickChart';
 import './Dashboard.scss';
 
 function Dashboard() {
   return (
     <div className="dashboard">
-      <div className="col-1"> 
-         <AreaChart /> 
-         <BarChart />
+       <div className="row-1">
+          <div className="col-1-1"> 
+             <div>
+                <SprinkLine /> 
+             </div>
+             <div>
+                <SprinkLine /> 
+             </div>
+             <div>
+                <SprinkLine /> 
+             </div>
+              <div>
+                <SprinkLine /> 
+             </div>
+          </div>
+    
+          <div className="col-1-2"> 
+             <CandleStickChart /> 
+          </div>
+        </div>
+      
+      <div className="row-2">
+         <div className="col-2-1"> 
+             <PieChart /> 
+             <ColumnChart  />
+          </div>
       </div>
-
-    <div className="col-1"> 
-         <SprinkLine /> 
-         <ColumnChart />
-      </div>
-
 
     </div>
   );
