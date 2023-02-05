@@ -249,21 +249,41 @@ function Sidebar(props) {
   const listItems = [
   {
     listIcon: <Home />,
-    listText: "Inbox"
+    listText: "Dashboard"
   },
   {
     listIcon: <AssignmentInd />,
-    listText: "Starred"
+    listText: "Analytics"
   },
   {
     listIcon: <Apps />,
-    listText: "Portfolio"
+    listText: "My Portfolio"
   },
   {
     listIcon: <ContactMail />,
-    listText: "Contacts"
+    listText: "My Wallets"
+  },
+   {
+    listIcon: <ContactMail />,
+    listText: "Exchanges"
   }
 ];
+  
+  const listItems2 = [
+  {
+    listIcon: <Home />,
+    listText: "Settings"
+  },
+  {
+    listIcon: <AssignmentInd />,
+    listText: "Help"
+  },
+  {
+    listIcon: <Apps />,
+    listText: "Log Out"
+  },
+];  
+  
   
   const { container } = props;
   const classes = useStyles();
@@ -277,7 +297,7 @@ function Sidebar(props) {
   const drawer = (
     <div className={classes.dashboardStyle}>
       <div className={classes.toolbar} />
-      <Divider />
+      <Divider/>
       <List>
         {listItems.map((listItem, index) => (
           <ListItem key={listItem} component={Link} to={"/" + listItem.listText}>
@@ -301,7 +321,7 @@ function Sidebar(props) {
       </List>
        <Divider />
       <List>
-        {listItems.map((listItem, index) => (
+        {listItems2.map((listItem, index) => (
           <ListItem key={listItem} component={Link} to={"/" + listItem.listText}>
           <ListItemButton   sx={{
                 backgroundColor: '#fff',
