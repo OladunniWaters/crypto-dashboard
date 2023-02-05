@@ -6,13 +6,13 @@ const StackedColumn = () => {
   
   const series = [ //data on the y-axis
              {
-              name: 'Net Profit',
+              name: 'Demand',
               data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
             }, {
-              name: 'Revenue',
+              name: 'Supply',
               data: [76, 85, 101, 98, 87, 105, 91, 114, 94]
             }, {
-              name: 'Free Cash Flow',
+              name: 'Revenue',
               data: [35, 41, 36, 26, 45, 48, 52, 53, 41]
             },
   ];

@@ -57,8 +57,7 @@ function CoinMetric() {
                       <a href={val.websiteUrl}>
                         <img src={val.icon} alt="logo" width="30px" />
                       </a>
-                       
-<p>{val.name}</p>
+                       <p>{val.name}</p>
  
                     </td>
                     <td className="symbol">{val.symbol}</td>

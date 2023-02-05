@@ -16,11 +16,19 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import ListItemButton from '@mui/material/ListItemButton';
 
+
 import {
   Apps,
   ContactMail,
   AssignmentInd,
-  Home
+  Home,
+  InfoIcon,
+  SettingsIcon,
+  LogoutIcon,
+  AnalyticsIcon,
+  AccountBoxIcon,
+  AccountBalanceWalletIcon,
+  AccountBalanceIcon
 } from "@mui/icons-material";
 
 import { Routes, Route, Link, BrowserRouter } from "react-router-dom";
@@ -252,34 +260,34 @@ function Sidebar(props) {
     listText: "Dashboard"
   },
   {
-    listIcon: <AssignmentInd />,
+    listIcon: <AnalyticsIcon />,
     listText: "Analytics"
   },
   {
-    listIcon: <Apps />,
+    listIcon: <AccountBoxIcon />,
     listText: "My Portfolio"
   },
   {
-    listIcon: <ContactMail />,
+    listIcon: <AccountBalanceWalletIcon />,
     listText: "My Wallets"
   },
    {
-    listIcon: <ContactMail />,
+    listIcon: <AccountBalanceIcon />,
     listText: "Exchanges"
   }
 ];
   
   const listItems2 = [
   {
-    listIcon: <Home />,
+    listIcon: <SettingsIcon  />,
     listText: "Settings"
   },
   {
-    listIcon: <AssignmentInd />,
+    listIcon: <InfoIcon />,
     listText: "Help"
   },
   {
-    listIcon: <Apps />,
+    listIcon: <LogoutIcon />,
     listText: "Log Out"
   },
 ];  

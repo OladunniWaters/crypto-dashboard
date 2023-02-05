@@ -33,14 +33,14 @@ const SprinkLine = () => {
                 min: 0
               },
               title: {
-                text: '$135,965',
+                text: '$60,827',
                 offsetX: 0,
                 style: {
                   fontSize: '14px',
                 }
               },
               subtitle: {
-                text: 'Profits',
+                text: 'BTC',
                 offsetX: 0,
                 style: {
                   fontSize: '12px',
