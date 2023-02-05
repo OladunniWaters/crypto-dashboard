@@ -9,7 +9,7 @@ const Btc = () => {
   ];
   const options = { //data on the x-axis
     chart: { id: 'bar-chart' , width: 380,type: 'pie', background: '#fff', borderRadius: '10px', foreColor: '#000'},
-    labels: ['Team A', 'Team B', 'Team C',],
+    labels: ['Demand', 'Supply', 'Revenue',],
     dataLabels: {
       enabled: false,
   },

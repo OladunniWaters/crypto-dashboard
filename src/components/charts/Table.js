@@ -5,34 +5,56 @@ import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
-import rows from "./rowsData";
+//import rows from "./rowsData";
 import './Table.scss'
-
+import Axios from "axios";
+import { useEffect, useState } from "react";
 
 export default () => (
+  
+  
+    const [crypto, setCrypto] = useState([]);
+ 
+  // Fetching crypto data from the API only
+  // once when the component is mounted
+  useEffect(() => {
+    Axios.get(
+`https://api.coinstats.app/public/v1/coins?skip=0&limit=100¤cy=INR`
+    ).then((res) => {
+      setCrypto(res.data.coins);
+    });
+  }, []);
+  
+  
   <div>
 
     <Paper className="container">
       <Table>
         <TableHead className="tablehead">
           <TableRow>
-            <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell numeric>Calories</TableCell>
-            <TableCell numeric>Fat (g)</TableCell>
-            <TableCell numeric>Carbs (g)</TableCell>
-            <TableCell numeric>Protein (g)</TableCell>
+            <TableCell>Rank</TableCell>
+            <TableCell>Name</TableCell>
+            <TableCell>Symbol</TableCell>
+            <TableCell>Market Cap</TableCell>
+            <TableCell>Price</TableCell>
+            <TableCell>Available Supply</TableCell>
+            <TableCell>Volume(24hrs)</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map(({ id, name, calories, fat, carbs, protein }) => (
-            <TableRow key={id}>
+          {crypto.map(({item}) => (
+            <TableRow key={item.id}>
               <TableCell component="th" scope="row">
-                {name}
+                 <a href={item.websiteUrl}>
+                        <img src={item.icon} alt="logo" width="30px" />
+                 </a>
+                {item.name}
               </TableCell>
-              <TableCell numeric>{calories}</TableCell>
-              <TableCell numeric>{fat}</TableCell>
-              <TableCell numeric>{carbs}</TableCell>
-              <TableCell numeric>{protein}</TableCell>
+              <TableCell>{item.symbol}</TableCell>
+              <TableCell>{item.marketCap}</TableCell>
+              <TableCell>{item.price.toFixed(2)}</TableCell>
+              <TableCell>{item.availableSupply}</TableCell>
+              <TableCell>{item..volume.toFixed(0)}</TableCell>
             </TableRow>
           ))}
         </TableBody>
