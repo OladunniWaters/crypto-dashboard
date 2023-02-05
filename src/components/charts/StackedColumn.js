@@ -1,8 +1,8 @@
 import React from 'react';
 import Chart from "react-apexcharts";
-import './ColumnChart.scss'
+import './StackedColumn.scss'
 
-const ColumnChart = () => {
+const StackedColumn = () => {
   
   const series = [ //data on the y-axis
              {
@@ -17,7 +17,13 @@ const ColumnChart = () => {
             },
   ];
   const options = { //data on the x-axis
-    chart: {id: 'bar-chart', type: 'bar', height: 350 ,background: '#fff', foreColor: '#000'},
+    chart: {id: 'bar-chart', 
+             type: 'bar', 
+             height: 100 ,
+             background: '#fff', 
+             foreColor: '#000',           
+             stacked: true,
+             stackType: '100%'},
     xaxis: {
       categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
       },
@@ -53,7 +59,7 @@ const ColumnChart = () => {
   };
 
   return (
-    <div className="column">
+    <div className="StackedColumn">
       <Chart
         options={options}
         series={series}
@@ -64,4 +70,4 @@ const ColumnChart = () => {
   )
 }
 
-export default ColumnChart;
+export default StackedColumn;

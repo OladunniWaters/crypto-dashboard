@@ -9,7 +9,7 @@ background : #1D1D41
 x and y axix label : #AEABD8                
 
 DASHBOARD background     
-bacjground: #141332
+background: #141332
 
 
 

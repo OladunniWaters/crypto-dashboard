@@ -251,7 +251,7 @@ const CandleStickChart = () => {
             }]
 
   const options = { //data on the x-axis
-    chart: { type: 'candlestick', height: 350, background: '#fff'},
+    chart: { type: 'candlestick', height: 350, background: '#fff', foreColor: '#000'},
     title: {
                 text: 'CandleStick Chart',
                 align: 'left'
@@ -263,7 +263,18 @@ const CandleStickChart = () => {
                 tooltip: {
                   enabled: true
                 }
-              }
+              },
+   plotOptions: {
+      candlestick: {
+        colors: {
+          upward: '#6359E9',
+          downward: '#64CFF6'
+        },
+        wick: {
+          useFillColor: true
+        }
+      }
+  }
   
   };
 
