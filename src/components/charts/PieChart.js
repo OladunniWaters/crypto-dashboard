@@ -5,21 +5,26 @@ import './PieChart.scss'
 const Btc = () => {
   
   const series = [ //data on the y-axis
-      44, 55, 13, 43, 22
+      18, 50, 44,
   ];
   const options = { //data on the x-axis
-    chart: { id: 'bar-chart' , width: 380,type: 'donut', background: '#fff', borderRadius: '10px'},
-    labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'],
-
-  };
+    chart: { id: 'bar-chart' , width: 380,type: 'pie', background: '#fff', borderRadius: '10px', foreColor: '#000'},
+    labels: ['Team A', 'Team B', 'Team C',],
+    dataLabels: {
+      enabled: false,
+  },
+   colors:['#64CFF6', '#6359E9', '#EFF4FB'],
+   fill:  {colors: ['#64CFF6', '#6359E9', '#EFF4FB'] }, 
+};
 
   return (
     <div className="pie">
       <Chart
         options={options}
         series={series}
-        type="donut"
-        width="400px"
+        type="pie"
+        width="100%"
+        height="100%"
       />
     </div>
   )

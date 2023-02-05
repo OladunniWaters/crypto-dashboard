@@ -93,7 +93,8 @@ const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({
   root: {
-    display: "flex"
+    display: "flex",
+    backgroundColor: '#F4F7FE',
   },
   drawer: {
     [theme.breakpoints.up("sm")]: {
@@ -103,6 +104,7 @@ const useStyles = makeStyles(theme => ({
   },
   appBar: {
     marginLeft: drawerWidth,
+     backgroundColor: '#6359E9',
     [theme.breakpoints.up("sm")]: {
       width: `calc(100% - ${drawerWidth}px)`
     }
@@ -115,23 +117,30 @@ const useStyles = makeStyles(theme => ({
   },
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
-    width: drawerWidth
+    width: drawerWidth,
+    backgroundColor: '#6359E9',
   },
   content: {
     flexGrow: 1,
-    padding: theme.spacing(3)
+    padding: theme.spacing(3),
+    backgroundColor: '#F4F7FE',
   },
   iconStyle: {
-   color: '#A9A9A9' ,
+   color: '#6359E9' ,
    width: '20px',
    height: '20px',
-   "&:hover, &.Mui-focusVisible": { color: "#2752E7" }   
+   "&:hover, &.Mui-focusVisible": { color: "#6359E9" }   
   },
   headBar: {
           [theme.breakpoints.down("md")]: {
       display: "none"
     } ,
-  }
+  },
+ dashboardStyle: {
+   backgroundColor: '#6359E9',
+   height: '100%',
+   width: '100%'
+ },
 }));
 
 function Sidebar(props) {
@@ -240,21 +249,41 @@ function Sidebar(props) {
   const listItems = [
   {
     listIcon: <Home />,
-    listText: "Inbox"
+    listText: "Dashboard"
   },
   {
     listIcon: <AssignmentInd />,
-    listText: "Starred"
+    listText: "Analytics"
   },
   {
     listIcon: <Apps />,
-    listText: "Portfolio"
+    listText: "My Portfolio"
   },
   {
     listIcon: <ContactMail />,
-    listText: "Contacts"
+    listText: "My Wallets"
+  },
+   {
+    listIcon: <ContactMail />,
+    listText: "Exchanges"
   }
 ];
+  
+  const listItems2 = [
+  {
+    listIcon: <Home />,
+    listText: "Settings"
+  },
+  {
+    listIcon: <AssignmentInd />,
+    listText: "Help"
+  },
+  {
+    listIcon: <Apps />,
+    listText: "Log Out"
+  },
+];  
+  
   
   const { container } = props;
   const classes = useStyles();
@@ -266,16 +295,42 @@ function Sidebar(props) {
   };
 
   const drawer = (
-    <div>
+    <div className={classes.dashboardStyle}>
       <div className={classes.toolbar} />
-      <Divider />
+      <Divider/>
       <List>
         {listItems.map((listItem, index) => (
           <ListItem key={listItem} component={Link} to={"/" + listItem.listText}>
           <ListItemButton   sx={{
-                color: '#A9A9A9',
+                backgroundColor: '#fff',
+                color: '#6359E9',
+                borderRadius:'10px',
                 '&:hover': {
-                  color: '#2752E7'
+                  backgroundColor: '#4318FF',
+                  color: '#6359E9',
+                  borderRadius:'10px',
+                },
+              }}>
+            <ListItemIcon className={classes.iconStyle}>
+              {listItem.listIcon}
+            </ListItemIcon>
+            <ListItemText primary={listItem.listText}/>
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+       <Divider />
+      <List>
+        {listItems2.map((listItem, index) => (
+          <ListItem key={listItem} component={Link} to={"/" + listItem.listText}>
+          <ListItemButton   sx={{
+                backgroundColor: '#fff',
+                color: '#6359E9',
+                borderRadius:'10px',
+                '&:hover': {
+                  backgroundColor: '#4318FF',
+                  color: '#6359E9',
+                  borderRadius:'10px',
                 },
               }}>
             <ListItemIcon className={classes.iconStyle}>
