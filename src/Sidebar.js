@@ -31,7 +31,7 @@ import {
 import { Routes, Route, Link, BrowserRouter } from "react-router-dom";
 
 import Starred from './components/coinmetric/CoinMetric';
-import Inbox from './components/dashboard/Dashboard'
+import Dashboard from './components/dashboard/Dashboard'
 
 
 /****************** start *****************/
@@ -463,7 +463,7 @@ function Sidebar(props) {
 
           <Routes>
             <Route exact path="/" render={() => <div>Home Page</div>} />
-            <Route path="/Inbox" element={<Inbox/>}  />
+            <Route path="/Dashboard" element={<Dashboard/>}  />
             <Route path="/Starred" element={<Starred />} />
           </Routes>
         </main>
