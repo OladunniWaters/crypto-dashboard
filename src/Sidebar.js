@@ -23,12 +23,12 @@ import {
   ContactMail,
   AssignmentInd,
   Home,
-  InfoIcon,
-  SettingsIcon,
-  LogoutIcon,
-  AccountBoxIcon,
-  AccountBalanceWalletIcon,
-  AccountBalanceIcon
+  Info,
+  Settings,
+  Logout,
+  AccountBox,
+  AccountBalanceWallet,
+  AccountBalance
 } from "@mui/icons-material";
 
 import { Routes, Route, Link, BrowserRouter } from "react-router-dom";
@@ -264,30 +264,30 @@ function Sidebar(props) {
     listText: "Analytics"
   },
   {
-    listIcon: <AccountBoxIcon />,
+    listIcon: <AccountBox />,
     listText: "My Portfolio"
   },
   {
-    listIcon: <AccountBalanceWalletIcon />,
+    listIcon: <AccountBalanceWallet />,
     listText: "My Wallets"
   },
    {
-    listIcon: <AccountBalanceIcon />,
+    listIcon: <AccountBalance />,
     listText: "Exchanges"
   }
 ];
   
   const listItems2 = [
   {
-    listIcon: <SettingsIcon  />,
+    listIcon: <Settings />,
     listText: "Settings"
   },
   {
-    listIcon: <InfoIcon />,
+    listIcon: <Info />,
     listText: "Help"
   },
   {
-    listIcon: <LogoutIcon />,
+    listIcon: <Logout />,
     listText: "Log Out"
   },
 ];  
