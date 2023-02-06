@@ -1,4 +1,4 @@
-import BarChart from '../charts/BarChart';
+//import BarChart from '../charts/BarChart';
 import ColumnChart from '../charts/ColumnChart';
 import StackedColumn from '../charts/StackedColumn';
 import PieChart from '../charts/PieChart';
