@@ -19,9 +19,6 @@ import AnalyticsIcon from '@mui/icons-material/Analytics';
 
 
 import {
-  Apps,
-  ContactMail,
-  AssignmentInd,
   Home,
   Info,
   Settings,
