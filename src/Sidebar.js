@@ -15,6 +15,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import ListItemButton from '@mui/material/ListItemButton';
+import AnalyticsIcon from '@mui/icons-material/Analytics';
 
 
 import {
@@ -25,7 +26,6 @@ import {
   InfoIcon,
   SettingsIcon,
   LogoutIcon,
-  AnalyticsIcon,
   AccountBoxIcon,
   AccountBalanceWalletIcon,
   AccountBalanceIcon
