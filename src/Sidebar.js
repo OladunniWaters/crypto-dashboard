@@ -462,7 +462,7 @@ function Sidebar(props) {
           <div className={classes.toolbar} />
 
           <Routes>
-            <Route exact path="/" render={() => <div>Home Page</div>} />
+            <Route exact path="/" element={<Dashboard />} />
             <Route path="/Dashboard" element={<Dashboard/>}  />
             <Route path="/Starred" element={<Starred />} />
           </Routes>
