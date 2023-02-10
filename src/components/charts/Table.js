@@ -7,7 +7,6 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 //import rows from "./rowsData";
 import './Table.scss'
-import Axios from "axios";
 import { useEffect, useState } from "react";
 
 export default () => (
@@ -17,13 +16,9 @@ export default () => (
  
   // Fetching crypto data from the API only
   // once when the component is mounted
-  useEffect(() => {
-    Axios.get(
-`https://api.coinstats.app/public/v1/coins?skip=0&limit=100¤cy=INR`
-    ).then((res) => {
-      setCrypto(res.data.coins);
-    });
-  }, []);
+  
+Apiurl = `https://api.coinstats.app/public/v1/coins?skip=0&limit=100¤cy=USD`
+   
   
   
   <div>
