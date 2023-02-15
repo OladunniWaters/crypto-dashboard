@@ -9,20 +9,25 @@ import Paper from "@material-ui/core/Paper";
 import './Table.scss'
 import { useEffect, useState } from "react";
 
-export default () => (
-  
-  
+export default Table() {
+
     const [crypto, setCrypto] = useState([]);
- 
-  // Fetching crypto data from the API only
-  // once when the component is mounted
-  
-Apiurl = `https://api.coinstats.app/public/v1/coins?skip=0&limit=100¤cy=USD`
-   
-  
+    apiUrl = `https://api.coinstats.app/public/v1/coins?skip=0&limit=100¤cy=USD`
+     fetchCrypto = async () => {
+       const url = apiUrl
+       const response = await fetch(url)
+       const data = await response.json()
+       setCrypto(data.coins)
+    }
+
+     useEffect(() => {
+      fetchCrypto();
+    }, [])
+
+
+  return (
   
   <div>
-
     <Paper className="container">
       <Table>
         <TableHead className="tablehead">
@@ -37,7 +42,7 @@ Apiurl = `https://api.coinstats.app/public/v1/coins?skip=0&limit=100¤cy=USD`
           </TableRow>
         </TableHead>
         <TableBody>
-          {crypto.map(({item}) => (
+          {crypto.map(item => (
             <TableRow key={item.id}>
               <TableCell component="th" scope="row">
                  <a href={item.websiteUrl}>
@@ -56,4 +61,5 @@ Apiurl = `https://api.coinstats.app/public/v1/coins?skip=0&limit=100¤cy=USD`
       </Table>
     </Paper>
   </div>
-);
+)
+};
