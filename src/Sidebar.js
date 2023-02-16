@@ -30,7 +30,7 @@ import {
 
 import { Routes, Route, Link, BrowserRouter } from "react-router-dom";
 
-import Starred from './components/coinmetric/CoinMetric';
+import Analytics from './components/charts/Table';
 import Dashboard from './components/dashboard/Dashboard'
 
 
@@ -464,7 +464,7 @@ function Sidebar(props) {
           <Routes>
             <Route exact path="/" element={<Dashboard />} />
             <Route path="/Dashboard" element={<Dashboard/>}  />
-            <Route path="/Starred" element={<Starred />} />
+            <Route path="/Analytics" element={<Analytics />} />
           </Routes>
         </main>
       </BrowserRouter>
