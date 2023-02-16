@@ -1,19 +1,10 @@
-import React from "react";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-import Paper from "@material-ui/core/Paper";
-//import rows from "./rowsData";
-import './Table.scss'
 import { useEffect, useState } from "react";
+import './Table.scss'
 
-function Table(){
-
-    const [crypto, setCrypto] = useState([]);
-    apiUrl = `https://api.coinstats.app/public/v1/coins?skip=0&limit=100¤cy=USD`
-     fetchCrypto = async () => {
+function TableTwo() {
+      const [crypto, setCrypto] = useState([]);
+    const  apiUrl = `https://api.coinstats.app/public/v1/coins?skip=0&limit=100¤cy=USD`
+     const  fetchCrypto = async () => {
        const url = apiUrl
        const response = await fetch(url)
        const data = await response.json()
@@ -23,45 +14,42 @@ function Table(){
      useEffect(() => {
       fetchCrypto();
     }, [])
-
-
-  return (
   
-  <div>
-    <Paper className="container">
-      <Table>
-        <TableHead className="tablehead">
-          <TableRow>
-            <TableCell>Rank</TableCell>
-            <TableCell>Name</TableCell>
-            <TableCell>Symbol</TableCell>
-            <TableCell>Market Cap</TableCell>
-            <TableCell>Price</TableCell>
-            <TableCell>Available Supply</TableCell>
-            <TableCell>Volume(24hrs)</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {crypto.map(item => (
-            <TableRow key={item.id}>
-              <TableCell component="th" scope="row">
-                 <a href={item.websiteUrl}>
-                        <img src={item.icon} alt="logo" width="30px" />
-                 </a>
-                {item.name}
-              </TableCell>
-              <TableCell>{item.symbol}</TableCell>
-              <TableCell>{item.marketCap}</TableCell>
-              <TableCell>{item.price.toFixed(2)}</TableCell>
-              <TableCell>{item.availableSupply}</TableCell>
-              <TableCell>{item.volume.toFixed(0)}</TableCell>
-            </TableRow>
+  return (
+ <div style={{overflowX: 'auto'}}>
+  <table>
+    <tr className="tablehead">
+      <th className="cell">Rank</th>
+      <th className="cell">Name</th>
+      <th className="cell">Price</th>
+      <th className="cell">Market Cap</th>
+      <th className="cell">Volume(24h)</th>
+      <th className="cell">Available Supply</th>
+    </tr>
+
+    {crypto.map(({ id, icon, marketCap, name, price, availableSupply, volume, rank, websiteUrl, symbol }) => (
+            <tr key={id}>
+              <td>{rank}</td>
+              <td className="tableFlex">
+                    <div className="icon-cont">
+                      <a href={websiteUrl}>
+                        <img src={icon} alt="logo" className="icon" />
+                      </a>
+                    </div>
+                      <div className="name-cont">
+                         <p className="name">{name}</p>
+                       </div>
+              </td>
+              <td className="number">${price.toFixed(2)}</td>
+              <td className="number">${marketCap}</td>
+              <td className="number">${volume.toFixed(0)}</td>
+              <td className="number">{availableSupply}</td> 
+            </tr>
           ))}
-        </TableBody>
-      </Table>
-    </Paper>
-  </div>
-)
+  </table>
+</div>
+
+  );
 }
 
-export default Table
+export default TableTwo;
