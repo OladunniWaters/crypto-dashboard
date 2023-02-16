@@ -54,7 +54,7 @@ function Table() {
               <TableCell>{item.marketCap}</TableCell>
               <TableCell>{item.price.toFixed(2)}</TableCell>
               <TableCell>{item.availableSupply}</TableCell>
-              <TableCell>{item..volume.toFixed(0)}</TableCell>
+              <TableCell>{item.volume.toFixed(0)}</TableCell>
             </TableRow>
           ))}
         </TableBody>
