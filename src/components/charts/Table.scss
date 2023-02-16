@@ -2,3 +2,58 @@
 background-color: #6359E9;  
 color: #fff;
 }
+
+.cell {
+  color: #fff;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  text-align: left;
+  padding: 15px;
+}
+
+tr:nth-child(even) {background-color: #EFF4FB;}
+
+
+.tableFlex {
+  display: flex;
+  text-align: center;
+}
+
+.icon-cont {
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  width: 30px;
+  border-radius: 50%;
+}
+
+.name-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+.name {
+ margin-bottom: -6px;
+font-weight: bold;
+}
+
+.number {
+  font-weight: 400;
+  font-family: 'Poppins', sans-serif;
+}
