@@ -1,19 +1,19 @@
-import { useEffect, useState } from "react";
+import {useCallback, useEffect, useState } from "react";
 import './Table.scss'
 
 function TableTwo() {
-      const [crypto, setCrypto] = useState([]);
+    const [crypto, setCrypto] = useState([]);
     const  apiUrl = `https://api.coinstats.app/public/v1/coins?skip=0&limit=100¤cy=USD`
-     const  fetchCrypto = async () => {
+     const  fetchCrypto = useCallback(async () => {
        const url = apiUrl
        const response = await fetch(url)
        const data = await response.json()
        setCrypto(data.coins)
-    }
+    }, [apiUrl]);
 
      useEffect(() => {
       fetchCrypto();
-    }, [])
+    }, [fetchCrypto])
   
   return (
  <div style={{overflowX: 'auto'}}>
