@@ -4,7 +4,7 @@ import StackedColumn from '../charts/StackedColumn';
 import PieChart from '../charts/PieChart';
 import SprinkLine from '../charts/SprinkLine';
 import CandleStickChart from '../charts/CandleStickChart';
-//import Table from '../charts/Table';
+import Table from '../charts/Table';
 import './Dashboard.scss';
 
 function Dashboard() {
@@ -30,12 +30,12 @@ function Dashboard() {
              <CandleStickChart/> 
           </div>
 
-{/*
+
           <div className="col-1-3"> 
              <Table /> 
           </div>
 
-*/}
+
         </div>
 
 
