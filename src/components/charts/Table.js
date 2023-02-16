@@ -9,7 +9,7 @@ import Paper from "@material-ui/core/Paper";
 import './Table.scss'
 import { useEffect, useState } from "react";
 
-function Table() {
+function Table(){
 
     const [crypto, setCrypto] = useState([]);
     apiUrl = `https://api.coinstats.app/public/v1/coins?skip=0&limit=100¤cy=USD`
@@ -62,7 +62,6 @@ function Table() {
     </Paper>
   </div>
 )
-};
-
+}
 
 export default Table
