@@ -369,7 +369,7 @@ function Sidebar(props) {
             component="div"
             className={classes.headBar}
           >
-            MUI
+            WATERS
           </Typography>
           <Search>
             <SearchIconWrapper>
